@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .Elements{
+            display: block;
+            color: brown;
+            background-color: black;
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            align-content: center;
+            
+            
+            
+        }
+        .container{
+            display:grid;
+            background-color: gray;
+            grid-template-rows: 200px 200px ;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Elements" style="background-color: aqua;">1</div>
+        <div class="Elements" style="background-color: antiquewhite;">2</div>
+        <div class="Elements" style="background-color: aquamarine;">3</div>
+        <div class="Elements" style="background-color:skyblue;">4</div>
+        <div class="Elements" style="background-color: greenyellow;">5</div>
+        <div class="Elements" style="background-color: cyan;">6</div>
+        <div class="Elements" style="background-color: fuchsia;">7</div>
+        <div class="Elements" style="background-color: gold;">8</div>
+    </div>
+</body>
+</html>
