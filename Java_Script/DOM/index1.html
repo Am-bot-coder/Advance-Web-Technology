@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom1</title>
+</head>
+<body>
+    <h1>Hello from &lt;myname></h1>
+    <div id="d">
+        i am from pune
+
+    </div>
+    <div>
+        <p class="A">
+            A1
+        </p>
+        <p class="A">
+            A2
+        </p >
+    </div>
+    <button onclick="changehead()">Click for h1</button>
+    <button onclick="changediv1()">Click for change div</button>
+    <button onclick="changep()">for paragraph</button>
+    <button onclick="change2p()">for 2.paragraph</button>
+
+    <script>
+        function changehead(){
+            tmp = document.getElementsByTagName('h1')
+            console.log(tmp)
+            tmp[0].innerText = "Hello From Ayush"
+        }
+
+        function changediv1(){
+            tmp = document.getElementById('d')
+            console.log(tmp)
+            tmp.innerText = "I am from saswad"
+        }
+
+        function changep(){
+            tmp = document.getElementsByClassName('A')
+            console.log(tmp)
+            tmp[0].innerHTML = "<b> A1 is bold now</b>"
+            tmp[1].style.color = 'red'
+            tmp[1].style.font = 'italic bold 20px arial'
+        }
+
+        function change2p(){
+            tmp = document.querySelectorAll('.A')
+            console.log(tmp)
+            tmp[0].innerHTML = "<b> A1 is bold now</b>"
+            tmp[1].style.color = 'Blue'
+            tmp[1].style.font = 'italic bold 20px arial'
+        }
+    </script>
+</body>
+</html>
