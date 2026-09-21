@@ -1,0 +1,91 @@
+/* style2.css */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.profile-card {
+    background-color: #1a1a1a;
+    max-width: 350px;
+    padding: 2rem;
+    border: 4px solid #00ff66;
+    box-shadow: 8px 8px 0px #ff0055;
+    position: relative;
+}
+
+.badge {
+    background-color: #ff0055;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid #ffffff;
+    display: inline-block;
+}
+
+h2 {
+    margin: 1.5rem 0 0 0;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: #00ff66;
+}
+
+.subtitle {
+    margin: 0.25rem 0 1.5rem 0;
+    color: #00ffff;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.card-body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #dddddd;
+    border-top: 2px dashed #333;
+    border-bottom: 2px dashed #333;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-footer a {
+    text-decoration: none;
+    text-align: center;
+    padding: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.1s;
+}
+
+.btn-primary {
+    background-color: #00ff66;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+.btn-primary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 2px 2px 0 #ffffff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #ff0055;
+    border: 2px solid #ff0055;
+}
+
+.btn-secondary:hover {
+    background-color: #ff0055;
+    color: #ffffff;
+}

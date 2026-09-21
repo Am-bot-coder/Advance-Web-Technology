@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One HTML, Two Styles</title>
+    <!-- Change 'style1.css' to 'style2.css' to see the transformation -->
+    <link rel="stylesheet" href="./s1.css" id="main">
+</head>
+<body>
+
+    <main class="card-container">
+        <article class="profile-card">
+            <header class="card-header">
+                <span class="badge">PRO MEMBER</span>
+                <h2>Alex Mercer</h2>
+                <p class="subtitle">Frontend Developer</p>
+            </header>
+            
+            <p class="card-body">
+                Building accessible, performant, and beautiful web interfaces. Loves clean code and dark roast coffee.
+            </p>
+            
+            <footer class="card-footer">
+                <a href="#" class="btn-primary">View Profile</a>
+                <a href="#" class="btn-secondary">Message</a>
+            </footer>
+        </article>
+    </main>
+
+    <button onclick="Change()">Magic</button>
+    <button onclick="Changerev()">noMagic</button>
+    <script>
+        function Change(){
+            tmp = document.getElementById('main')
+            console.log(tmp)
+            tmp.innerHTML = '<link rel="stylesheet" href="./s2.css" id="main">'
+        }
+        function Changerev(){
+            tmp = document.getElementById('main')
+            console.log(tmp)
+            tmp.innerHTML = '<link rel="stylesheet" href="./s1.css" id="main">'
+        }
+    </script>
+</body>
+</html>
