@@ -34,5 +34,5 @@ console.log("================================")
 console.log(mname.split(""))// ['A', 'y', 'u', 's', 'h']
 
 console.log("================================")
-console.log(mname.split("").reverse().join(""))
+console.log(mname.split("").reverse().join(""))//hsuyA
 
