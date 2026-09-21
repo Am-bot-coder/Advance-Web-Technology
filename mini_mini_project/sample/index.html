@@ -28,18 +28,26 @@
         </article>
     </main>
 
-    <button onclick="Change()">Magic</button>
-    <button onclick="Changerev()">noMagic</button>
+    <button onclick="Change()" id="magic" style="color: crimson; background-color: darkgrey;">Magic</button>
+    <!-- <button onclick="Changerev()">noMagic</button> -->
     <script>
         function Change(){
             tmp = document.getElementById('main')
             console.log(tmp)
-            tmp.innerHTML = '<link rel="stylesheet" href="./s2.css" id="main">'
-        }
+            tmp.href = './s2.css'
+            tmp2 = document.getElementById('magic')
+            console.log(tmp2)
+            tmp2.onclick = Changerev
+            tmp2.style="color: blue; background-color: aqua;"}
+            
         function Changerev(){
             tmp = document.getElementById('main')
             console.log(tmp)
-            tmp.innerHTML = '<link rel="stylesheet" href="./s1.css" id="main">'
+            tmp.href='./s1.css'
+            tmp2 = document.getElementById('magic')
+            console.log(tmp2)
+            tmp2.onclick = Change
+            tmp2.style = "color: crimson; background-color: darkgrey;"
         }
     </script>
 </body>
