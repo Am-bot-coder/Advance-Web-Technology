@@ -4,39 +4,63 @@ const pool = require('../utils/pool')
 route = express.Router()
 
 route.get('/',async (req,res)=>{
-    sql = 'SELECT * FROM user;'
-    data = await pool.query(sql)
-    user = data[0]
-
-    res.send()
+    const sql = 'SELECT * FROM user;'
+    try {
+        data = await pool.query(sql)
+        user = result.successResult(data[0])
+        res.send(user)
+    } catch (error) {
+        res.send(result.errorResult(error))
+    }
 })
 
 route.post('/signup',async(req,res)=>{
     const{name,mobile,email,pass} = req.body
-    sql = 'INSERT INTO USER(name,email,mobile,pass) VALUES(?,?,?,?)'
-    data = await pool.query(sql,[name,email,mobile,pass])
-    res.send(data[0])
+    const sql = 'INSERT INTO user(name,email,mobile,pass) VALUES(?,?,?,?)'
+    try {
+        data = await pool.query(sql,[name,email,mobile,pass])
+        user = result.successResult(data[0])
+        res.send(user)
+    } catch (error) {
+        res.send(result.errorResult(error))
+    }
 })
 
 route.post('/signin',async(req,res)=>{
     const{email,pass} = req.body
-    sql = 'SELECT uid,name,email,mobile FROM user WHERE email = ? and pass = ?'
-    data = await pool.query(sql,[email,pass])
-    res.send(data[0][0])
+    const sql = 'SELECT uid,name,email,mobile FROM user WHERE email = ? and pass = ?'
+    try {
+        data = await pool.query(sql,[email,pass])
+        user = result.createResult(data[0][0],"Invalid credentials")
+        res.send(user)
+    } catch (error) {
+        res.send(result.errorResult(error))
+    }
 })
 
 route.put("/",async(req,res)=>{
     const{uid,mobile} = req.body
     sql = 'UPDATE user SET mobile = ? WHERE uid = ?'
-    data = await pool.query(sql,[mobile,uid])
-    res.send(data[0])
+    try {
+        data = await pool.query(sql,[mobile,uid])
+        user = result.successResult(data[0])
+        res.send(user)
+    }catch (error) {
+        res.send(result.errorResult(error))
+    }
 })
 
 route.delete("/",async(req,res)=>{
     const{uid} = req.body
-    sql = 'delete from user WHERE uid = ?'
-    data = await pool.query(sql,[uid])
-    res.send(data[0])
+    const sql = 'delete from user WHERE uid = ?'
+    try{
+        data = await pool.query(sql,[uid])
+        user = result.successResult(data[0])
+        res.send(user)
+    }
+    catch(error){
+        res.send(result.errorResult(error))
+    }
 })
 
 

@@ -1,5 +1,5 @@
 function createResult(body,error){
-    if(data){
+    if(body){
         return successResult(body)
     }
     else{
