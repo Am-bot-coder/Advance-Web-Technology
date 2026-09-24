@@ -23,6 +23,13 @@ route.put("/user",async(req,res)=>{
     res.send(data[0])
 })
 
+route.delete("/user",async(req,res)=>{
+    const{uid} = req.body
+    sql = 'delete from user WHERE uid = ?'
+    data = await pool.query(sql,[uid])
+    res.send(data[0])
+})
+
 
 
 module.exports = route
