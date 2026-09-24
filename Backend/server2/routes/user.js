@@ -1,12 +1,14 @@
 const express = require('express')
+const result = require('../utils/result')
 const pool = require('../utils/pool')
 route = express.Router()
 
 route.get('/',async (req,res)=>{
     sql = 'SELECT * FROM user;'
     data = await pool.query(sql)
-    // res.send(data) --> It gave an array contain  the data + buffer
-    res.send(data[0])
+    user = data[0]
+
+    res.send()
 })
 
 route.post('/signup',async(req,res)=>{

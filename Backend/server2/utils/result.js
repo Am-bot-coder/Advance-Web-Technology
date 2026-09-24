@@ -20,3 +20,5 @@ function errorResult(error){
     result.error = error
     return result
 }
+
+module.exports = {createResult,successResult,errorResult}
