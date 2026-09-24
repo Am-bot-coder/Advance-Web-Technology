@@ -5,3 +5,5 @@ pool = mysql2.createPool({
     database:'server',
     password:'Ayush2004'
 })
+
+module.exports = pool
