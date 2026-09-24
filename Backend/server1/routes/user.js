@@ -9,9 +9,11 @@ route.get('/user',async (req,res)=>{
     res.send(data[0])
 })
 
-route.post('/user',(req,res)=>{
-    data = req.body
-    sql = 'INSERT INTO USER '
+route.post('/user',async(req,res)=>{
+    const{name,mobile,email,pass} = req.body
+    sql = 'INSERT INTO USER(name,email,mobile,pass) VALUES(?,?,?,?)'
+    data = await pool.query(sql,[name,mobile,email,pass])
+    res.send(data[0])
 })
 
 
