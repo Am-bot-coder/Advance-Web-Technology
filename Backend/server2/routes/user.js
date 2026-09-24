@@ -9,11 +9,18 @@ route.get('/',async (req,res)=>{
     res.send(data[0])
 })
 
-route.post('/',async(req,res)=>{
+route.post('/signup',async(req,res)=>{
     const{name,mobile,email,pass} = req.body
     sql = 'INSERT INTO USER(name,email,mobile,pass) VALUES(?,?,?,?)'
     data = await pool.query(sql,[name,email,mobile,pass])
     res.send(data[0])
+})
+
+route.post('/signin',async(req,res)=>{
+    const{email,pass} = req.body
+    sql = 'SELECT uid,name,email,mobile FROM user WHERE email = ? and pass = ?'
+    data = await pool.query(sql,[email,pass])
+    res.send(data[0][0])
 })
 
 route.put("/",async(req,res)=>{

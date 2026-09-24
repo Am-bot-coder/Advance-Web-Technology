@@ -1,12 +1,12 @@
 const express = require('express')
 port = 4000
 const userRoute = require('./routes/user')
-const productRoute = require('./routes/product')
+
 app = express()
 
 app.use(express.json()) // always need when you need to display or put data in form of object
 app.use('/user',userRoute)
-app.use('/product',productRoute)
+
 
 
 
