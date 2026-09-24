@@ -3,7 +3,7 @@ port = 4000
 const userRoute = require('./routes/user')
 app = express()
 
-
+app.use(express.json())
 app.use(userRoute)
 
 

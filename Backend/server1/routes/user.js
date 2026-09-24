@@ -7,7 +7,7 @@ route.get('/user',(req,res)=>{
 
 route.post('/user',(req,res)=>{
     data = req.body
-    res.send(body)
+    res.send(data)
 })
 
 
