@@ -3,6 +3,7 @@ const result = require('../utils/result')
 const pool = require('../utils/pool')
 const bcrypt = require('bcrypt')
 const config = require('../utils/config')
+const jwt = require('jsonwebtoken')
 route = express.Router()
 
 route.get('/',async (req,res)=>{
@@ -42,7 +43,13 @@ route.post('/signin',async(req,res)=>{
         }
         const ispass = await bcrypt.compare(pass,user.pass)
         if(ispass){
+            const payload = {
+                "uid":user.uid
+            }
+            delete user.uid
             delete user.pass
+            token = jwt.sign(payload,config.secret)
+            user.token = token
             res.send(result.successResult(user))
         }else{
             return res.send(result.errorResult("Invalid Password"))
