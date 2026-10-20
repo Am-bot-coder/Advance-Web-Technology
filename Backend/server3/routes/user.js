@@ -32,6 +32,7 @@ route.post('/signup',async(req,res)=>{
 
 route.post('/signin',async(req,res)=>{
     const{email,pass} = req.body
+    console.log(email+"   "+pass)
     const sql = 'SELECT * FROM user WHERE email = ?'
     
     try {

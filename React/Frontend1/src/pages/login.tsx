@@ -5,14 +5,14 @@ import { UserServices } from "../Services/userServices"
 function Login() {
 
   const[email,setEmail] = useState("")
-  const[password,setPassword] = useState("")
+  const[pass,setPassword] = useState("")
 
   const handleClick = async()=>{
     console.log(email)
-    console.log(password)
+    console.log(pass)
     try {
       console.log("Try Block")
-      const result = await UserServices(email,password)
+      const result = await UserServices(email,pass)
     console.log(result.data) 
     } catch (error) {
       console.log("Catch Block")
