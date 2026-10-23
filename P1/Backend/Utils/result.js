@@ -1,4 +1,4 @@
-const CreateResult = function(data,error){
+function createResult(data,error){
     if(data){
         return SuccessResult(data)
     }
@@ -9,13 +9,16 @@ const CreateResult = function(data,error){
 
 function SuccessResult(data){
     result = {}
-    result.status="Success",
+    result.status = 'Success'
     result.data = data
     return result
 }
 
 function ErrorResult(error){
     result = {}
-    result.status="Error",
+    result.status = 'Error'
     result.error = error
+    return result
 }
+
+module.exports = {createResult,SuccessResult,ErrorResult}
